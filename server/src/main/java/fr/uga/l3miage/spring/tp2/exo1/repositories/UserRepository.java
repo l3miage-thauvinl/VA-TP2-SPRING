@@ -10,4 +10,6 @@ import java.util.Set;
 public interface UserRepository extends JpaRepository<UserEntity,String> {
 
     Set<UserEntity> findAllByMailContaining(String containing);
+
+    Set<UserEntity> findAllByNameContaining(String name);
 }

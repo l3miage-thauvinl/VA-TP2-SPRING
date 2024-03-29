@@ -1,8 +1,8 @@
 package fr.uga.l3miage.spring.tp2.exo1.models;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import fr.uga.l3miage.exo1.enums.GenreMusical;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,6 +10,9 @@ import java.util.Set;
 @Entity
 @Setter
 @Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ArtistEntity {
     @Id
     private String name;
@@ -21,4 +24,5 @@ public class ArtistEntity {
 
     @OneToMany(mappedBy = "artistEntity",cascade = CascadeType.ALL)
     private Set<AlbumEntity> albumEntities;
+
 }
